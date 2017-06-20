@@ -1,9 +1,14 @@
-                                        bbbbbbbb                              
-                                    bbbbbb                                    
-                                bbbbbbbb                                      
+
+
+
+    bb
+   bb bb
+ bbb bb bbb                             bbbbbbbb                              
+bbbbbbbbbbbbbb                      bbbbbb                                    
+bb  bb  bb  bb                  bbbbbbbb                                      
 bbbbbbbbbbbbbb              bbbbbbbbbb                                        
 bb  bb  bb  bb          bbbbbbbbbbbb                    b   b   b   b         
 bbbbbbbbbbbbbb          bbbbbbbbbbbbbbbbbbbbbbbbbbbbb  bbb bbb bbb bbb        
-bbbbbbbbbbbbbb          bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-wwwwwwwwwwwwwwwwwwww    wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
-wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+bbbbbbbbbbbbbb          bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
+wwwwwwwwwwwwwwwwwwww    wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww
+wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww

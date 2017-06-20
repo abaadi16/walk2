@@ -158,7 +158,7 @@ public:
 	int tilesize[2];
 	Flt ftsz[2];
 	Flt tile_base;
-	int dynamicHeight[3000];
+	int dynamicHeight[200];
 	Level() {
 		//Log("Level constructor\n");
 		tilesize[0] = 32;
@@ -166,8 +166,9 @@ public:
 		ftsz[0] = (Flt)tilesize[0];
 		ftsz[1] = (Flt)tilesize[1];
 		tile_base = 220.0;
-		for ( int i=0; i<3000; i++) {
-			dynamicHeight[i] = -1;
+
+		for ( unsigned j=0; j<sizeof(dynamicHeight)/sizeof(dynamicHeight[0]); j++) {
+			dynamicHeight[j] = -1;
 			
 		}
 		//read level
