@@ -158,6 +158,7 @@ public:
 	int tilesize[2];
 	Flt ftsz[2];
 	Flt tile_base;
+	int dynamicHeight[3000];
 	Level() {
 		//Log("Level constructor\n");
 		tilesize[0] = 32;
@@ -165,6 +166,10 @@ public:
 		ftsz[0] = (Flt)tilesize[0];
 		ftsz[1] = (Flt)tilesize[1];
 		tile_base = 220.0;
+		for ( int i=0; i<3000; i++) {
+			dynamicHeight[i] = -1;
+			
+		}
 		//read level
 		FILE *fpi = fopen("level1.txt","r");
 		if (fpi) {
@@ -190,6 +195,7 @@ public:
 			printf("\n");
 		}
 	}
+
 	void removeCrLf(char *str) {
 		char *p = str;
 		while (*p) {
@@ -636,19 +642,38 @@ void physics(void)
 		}
 	}
 	// move the ball
+	// If ( i have a value store in col ) 
+	//      get it and dont loop
+	// else 
+	// 		loop and get the value
+	//
 	gl.ball_pos[1] += gl.ball_vel[1];	
 	gl.ball_vel[1] -= 1.0;	
 	Flt dd = lev.ftsz[0];
-	//camera position 
+	// camera position 
+	//////////
+	// Declare a global array
+	// Store the value of the file on it
+	//
 	int col = (int)(gl.camera[0] / dd) + (500.0/lev.tilesize[0]+1.0);
 	col = col % lev.ncols;
 	int hgt = 0.0;
-	for (int i=0; i<lev.nrows; i++) {
-		if (lev.arr[i][col] != ' ') {
-			hgt = i;
-			break;
+	
+	if ( lev.dynamicHeight[col]!= -1 ) {
+		hgt = lev.dynamicHeight[col];
+	
+	} else {
+		for (int i=0; i<lev.nrows; i++) {
+			if (lev.arr[i][col] != ' ') {
+				hgt = i;
+				lev.dynamicHeight[col] = hgt;
+				break;
+			}
+
 		}
+		printf("Col saved: %i\n", col);
 	}
+	
 	// height of ball is 
 	Flt h  = lev.tilesize[1]*(lev.nrows - hgt) + lev.tile_base;
 	if (gl.ball_pos[1] <= h) {
@@ -660,7 +685,7 @@ void physics(void)
 void render(void)
 {
 	Rect r;
-	//Clear the screen
+	// Clear the screen
 	glClearColor(0.1, 0.1, 0.1, 1.0);
 	glClear(GL_COLOR_BUFFER_BIT);
 	float cx = gl.xres/2.0;
